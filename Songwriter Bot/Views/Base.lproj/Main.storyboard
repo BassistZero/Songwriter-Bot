@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O6a-yR-tgR">
+    <device id="retina6_7" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TabView-->
+        <scene sceneID="zy0-Oq-BO4">
+            <objects>
+                <viewController id="bs7-F5-aHF" userLabel="TabView" customClass="TabViewController" customModule="Songwriter_Bot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mYx-gd-LRI">
+                        <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Tabs*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad1-lk-YZk">
+                                <rect key="frame" x="393" y="184" width="140" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cHM-hp-A1Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ad1-lk-YZk" firstAttribute="centerY" secondItem="mYx-gd-LRI" secondAttribute="centerY" id="j8S-YS-IBm"/>
+                            <constraint firstItem="ad1-lk-YZk" firstAttribute="centerX" secondItem="mYx-gd-LRI" secondAttribute="centerX" id="qA9-4o-dds"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tab" id="2cE-vH-So8"/>
+                    <connections>
+                        <outlet property="tabLabel" destination="ad1-lk-YZk" id="890-Zl-GJ5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uh6-6h-dxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378" y="445"/>
+        </scene>
+        <!--BotView-->
+        <scene sceneID="aRz-qp-60s">
+            <objects>
+                <viewController id="B2x-W6-dTc" userLabel="BotView" customClass="BotViewController" customModule="Songwriter_Bot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RsY-bk-FNW">
+                        <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IT-lz-PNs">
+                                <rect key="frame" x="365" y="178" width="196" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="generateButton:" destination="B2x-W6-dTc" eventType="touchUpInside" id="sV0-t4-fN3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N7Z-wV-dIr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5IT-lz-PNs" firstAttribute="centerX" secondItem="RsY-bk-FNW" secondAttribute="centerX" id="eUy-ka-Vfb"/>
+                            <constraint firstItem="5IT-lz-PNs" firstAttribute="centerY" secondItem="RsY-bk-FNW" secondAttribute="centerY" id="maQ-Ff-eHI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bot" id="P5O-Ty-VCb" userLabel="Bot"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIH-wK-pZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378.40172786177106" y="-388.31775700934577"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sFc-c3-2mu">
+            <objects>
+                <tabBarController id="O6a-yR-tgR" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zza-f7-dGP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="B2x-W6-dTc" kind="relationship" relationship="viewControllers" id="Zow-IT-mdJ"/>
+                        <segue destination="bs7-F5-aHF" kind="relationship" relationship="viewControllers" id="fOj-HD-hpA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKB-td-vGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1267" y="16"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

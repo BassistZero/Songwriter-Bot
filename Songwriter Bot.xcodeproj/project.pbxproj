@@ -7,23 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0206DD642659A7AD0006829B /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206DD632659A7AD0006829B /* TabViewController.swift */; };
 		02892FFC2659A4FD0014032E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02892FFB2659A4FD0014032E /* AppDelegate.swift */; };
 		02892FFE2659A4FD0014032E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02892FFD2659A4FD0014032E /* SceneDelegate.swift */; };
-		028930002659A4FD0014032E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02892FFF2659A4FD0014032E /* ViewController.swift */; };
+		028930002659A4FD0014032E /* BotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02892FFF2659A4FD0014032E /* BotViewController.swift */; };
 		028930032659A4FD0014032E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028930012659A4FD0014032E /* Main.storyboard */; };
 		028930052659A5090014032E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 028930042659A5090014032E /* Assets.xcassets */; };
 		028930082659A5090014032E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028930062659A5090014032E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0206DD632659A7AD0006829B /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		02892FF82659A4FD0014032E /* Songwriter Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Songwriter Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02892FFB2659A4FD0014032E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02892FFD2659A4FD0014032E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02892FFF2659A4FD0014032E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02892FFF2659A4FD0014032E /* BotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotViewController.swift; sourceTree = "<group>"; };
 		028930022659A4FD0014032E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		028930042659A5090014032E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		028930072659A5090014032E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		028930092659A5090014032E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0289300F2659A5150014032E /* Songwriter Bot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Songwriter Bot.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +59,41 @@
 		02892FFA2659A4FD0014032E /* Songwriter Bot */ = {
 			isa = PBXGroup;
 			children = (
+				0289300F2659A5150014032E /* Songwriter Bot.entitlements */,
 				02892FFB2659A4FD0014032E /* AppDelegate.swift */,
 				02892FFD2659A4FD0014032E /* SceneDelegate.swift */,
-				02892FFF2659A4FD0014032E /* ViewController.swift */,
-				028930012659A4FD0014032E /* Main.storyboard */,
+				028930122659A5D90014032E /* Controllers */,
+				028930112659A5D40014032E /* Views */,
+				028930102659A5CF0014032E /* Models */,
 				028930042659A5090014032E /* Assets.xcassets */,
 				028930062659A5090014032E /* LaunchScreen.storyboard */,
 				028930092659A5090014032E /* Info.plist */,
 			);
 			path = "Songwriter Bot";
+			sourceTree = "<group>";
+		};
+		028930102659A5CF0014032E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		028930112659A5D40014032E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				028930012659A4FD0014032E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		028930122659A5D90014032E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				02892FFF2659A4FD0014032E /* BotViewController.swift */,
+				0206DD632659A7AD0006829B /* TabViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				028930002659A4FD0014032E /* ViewController.swift in Sources */,
+				0206DD642659A7AD0006829B /* TabViewController.swift in Sources */,
+				028930002659A4FD0014032E /* BotViewController.swift in Sources */,
 				02892FFC2659A4FD0014032E /* AppDelegate.swift in Sources */,
 				02892FFE2659A4FD0014032E /* SceneDelegate.swift in Sources */,
 			);
@@ -286,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Songwriter Bot/Songwriter Bot.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SMNXVGXK4L;
 				INFOPLIST_FILE = "Songwriter Bot/Info.plist";
@@ -295,8 +326,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Bassist-Zero.Songwriter-Bot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -305,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Songwriter Bot/Songwriter Bot.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SMNXVGXK4L;
 				INFOPLIST_FILE = "Songwriter Bot/Info.plist";
@@ -314,8 +348,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Bassist-Zero.Songwriter-Bot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
