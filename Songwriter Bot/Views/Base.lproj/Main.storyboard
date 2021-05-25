@@ -55,15 +55,26 @@
                                     <action selector="generateButton:" destination="B2x-W6-dTc" eventType="touchUpInside" id="sV0-t4-fN3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Tabs*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-Sc-JAo">
+                                <rect key="frame" x="393" y="10" width="140" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N7Z-wV-dIr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LQQ-Sc-JAo" firstAttribute="centerX" secondItem="RsY-bk-FNW" secondAttribute="centerX" id="2qL-MH-O8f"/>
+                            <constraint firstItem="LQQ-Sc-JAo" firstAttribute="top" secondItem="N7Z-wV-dIr" secondAttribute="top" constant="10" id="6dv-yP-Ef0"/>
                             <constraint firstItem="5IT-lz-PNs" firstAttribute="centerX" secondItem="RsY-bk-FNW" secondAttribute="centerX" id="eUy-ka-Vfb"/>
                             <constraint firstItem="5IT-lz-PNs" firstAttribute="centerY" secondItem="RsY-bk-FNW" secondAttribute="centerY" id="maQ-Ff-eHI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bot" id="P5O-Ty-VCb" userLabel="Bot"/>
+                    <connections>
+                        <outlet property="tabDebugLabel" destination="LQQ-Sc-JAo" id="MTk-76-Hau"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIH-wK-pZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
