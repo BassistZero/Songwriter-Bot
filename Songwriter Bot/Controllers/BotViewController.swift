@@ -3,7 +3,7 @@
 //  Songwriter Bot
 //
 //  Created by Bassist Zero on 5/22/21.
-//
+
 
 import UIKit
 
@@ -25,4 +25,3 @@ class BotViewController: UIViewController {
     }
     
 }
-
