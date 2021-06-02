@@ -10,6 +10,7 @@ import UIKit
 class BotViewController: UIViewController {
     
     @IBOutlet weak var tabDebugLabel: UILabel!
+    @IBOutlet weak var stopPlayLabel: UIButton!
     
     var bot = SongwriterBot(tempo: 100) // 100 or 120. Something is easier to count. Should be ;)
 
@@ -24,4 +25,13 @@ class BotViewController: UIViewController {
         bot.parseGuitar()
     }
     
+    @IBAction func stopButton(_ sender: UIButton) {
+        bot.stopAndPlaySound()
+        
+        if bot.getCounter() == 0 {
+            stopPlayLabel.setTitle("Stop", for: .normal)
+        } else {
+            stopPlayLabel.setTitle("Play", for: .normal)
+        }
+    }
 }

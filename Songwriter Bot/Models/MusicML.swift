@@ -5,6 +5,8 @@
 //  Created by Bassist Zero on 5/25/21.
 //
 
+//TODO: alternative riff generation
+
 import Foundation
 
 // Manual Machine Learing :D
