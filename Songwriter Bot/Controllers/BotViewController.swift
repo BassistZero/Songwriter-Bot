@@ -32,9 +32,9 @@ class BotViewController: UIViewController {
     }
     
     @IBAction func stopButton(_ sender: UIButton) {
-        bot.stopAndPlaySound()
-        
-        if tabDebugLabel.text != "Click 'Generate' to Start" {
+        if tabDebugLabel.text != "*Click 'Generate' to Start*" {
+            bot.stopAndPlaySound()
+            
             if bot.getCounter() == 0 {
                 stopPlayLabel.setTitle("Stop", for: .normal)
             } else {

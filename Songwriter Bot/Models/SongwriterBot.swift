@@ -5,8 +5,8 @@
 //  Created by Bassist Zero on 5/23/21.
 //
 
-//TODO: Drum and Optional(Bass playing root note) hard-coded generator
-//TODO: Tempo converter
+
+//TODO: Make the kick louder
 
 import Foundation
 import AVFoundation
@@ -33,9 +33,7 @@ class SongwriterBot {
     /// Generate notes for an 8 note riff.
     public func generateEightNoteRiff() {
         stopSound()
-//        notes = ml.generateAlternativeNotes()
         notes = ml.generateAlternativeNotes()
-        
         counter = 0
     }
     
