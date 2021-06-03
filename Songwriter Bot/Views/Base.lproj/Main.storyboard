@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B2x-W6-dTc">
-    <device id="retina5_9" orientation="landscape" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="B2x-W6-dTc" userLabel="BotView" customClass="BotViewController" customModule="Songwriter_Bot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RsY-bk-FNW">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Tabs*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-Sc-JAo" userLabel="Tab Label">
-                                <rect key="frame" x="336" y="41.666666666666657" width="140" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Click 'Generate' to Start*" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQQ-Sc-JAo" userLabel="Tab Label">
+                                <rect key="frame" x="62.5" y="81.5" width="542.5" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="4Vb-bJ-a52" userLabel="Buttons Stack">
-                                <rect key="frame" x="239" y="151.66666666666666" width="334" height="72"/>
+                                <rect key="frame" x="50" y="151.5" width="567" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IT-lz-PNs">
                                         <rect key="frame" x="0.0" y="0.0" width="196" height="72"/>
@@ -34,39 +34,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FH7-a9-5St">
-                                        <rect key="frame" x="234" y="0.0" width="100" height="72"/>
+                                        <rect key="frame" x="234" y="0.0" width="333" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <state key="normal" title="Stop"/>
+                                        <state key="normal" title="Nothing to Stop"/>
                                         <connections>
                                             <action selector="stopButton:" destination="B2x-W6-dTc" eventType="touchUpInside" id="oQv-Gf-3aw"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lNg-z7-c5o" userLabel="Tempo Stack">
-                                <rect key="frame" x="320" y="233.66666666666666" width="172" height="45.666666666666664"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKP-oA-AnF">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="45.666666666666664"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="120" textAlignment="center" minimumFontSize="30" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UCO-gh-HeT">
-                                        <rect key="frame" x="94.333333333333314" y="0.0" width="77.666666666666686" height="45.666666666666664"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N7Z-wV-dIr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LQQ-Sc-JAo" firstAttribute="centerX" secondItem="RsY-bk-FNW" secondAttribute="centerX" id="A1M-Vp-ZiJ"/>
-                            <constraint firstItem="4Vb-bJ-a52" firstAttribute="top" secondItem="LQQ-Sc-JAo" secondAttribute="bottom" constant="50" id="Aat-VO-sSk"/>
-                            <constraint firstItem="4Vb-bJ-a52" firstAttribute="centerX" secondItem="RsY-bk-FNW" secondAttribute="centerX" id="Npz-4J-2k0"/>
-                            <constraint firstItem="4Vb-bJ-a52" firstAttribute="centerY" secondItem="RsY-bk-FNW" secondAttribute="centerY" id="QXR-cv-45x"/>
+                            <constraint firstItem="4Vb-bJ-a52" firstAttribute="centerY" secondItem="RsY-bk-FNW" secondAttribute="centerY" id="9GH-w1-ozs"/>
+                            <constraint firstItem="LQQ-Sc-JAo" firstAttribute="centerX" secondItem="RsY-bk-FNW" secondAttribute="centerX" id="FND-fN-baG"/>
+                            <constraint firstItem="4Vb-bJ-a52" firstAttribute="centerX" secondItem="RsY-bk-FNW" secondAttribute="centerX" id="Sla-9Z-OFQ"/>
+                            <constraint firstItem="4Vb-bJ-a52" firstAttribute="top" secondItem="LQQ-Sc-JAo" secondAttribute="bottom" constant="10" id="eVE-vr-sU7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bot" id="P5O-Ty-VCb" userLabel="Bot"/>

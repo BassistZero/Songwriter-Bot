@@ -30,6 +30,9 @@
 		028930032659A4FD0014032E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028930012659A4FD0014032E /* Main.storyboard */; };
 		028930052659A5090014032E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 028930042659A5090014032E /* Assets.xcassets */; };
 		028930082659A5090014032E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028930062659A5090014032E /* LaunchScreen.storyboard */; };
+		02FE3E5E2668C8FE00B0467D /* kick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 02FE3E5B2668C8FD00B0467D /* kick.mp3 */; };
+		02FE3E5F2668C8FE00B0467D /* hi-hat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 02FE3E5C2668C8FE00B0467D /* hi-hat.mp3 */; };
+		02FE3E602668C8FE00B0467D /* snare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 02FE3E5D2668C8FE00B0467D /* snare.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		028930072659A5090014032E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		028930092659A5090014032E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0289300F2659A5150014032E /* Songwriter Bot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Songwriter Bot.entitlements"; sourceTree = "<group>"; };
+		02FE3E5B2668C8FD00B0467D /* kick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kick.mp3; sourceTree = "<group>"; };
+		02FE3E5C2668C8FE00B0467D /* hi-hat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "hi-hat.mp3"; sourceTree = "<group>"; };
+		02FE3E5D2668C8FE00B0467D /* snare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snare.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,9 @@
 				028792AC265ED27B00F0F4EB /* 10.mp3 */,
 				028792A7265ED27A00F0F4EB /* 11.mp3 */,
 				028792AA265ED27A00F0F4EB /* 12.mp3 */,
+				02FE3E5C2668C8FE00B0467D /* hi-hat.mp3 */,
+				02FE3E5B2668C8FD00B0467D /* kick.mp3 */,
+				02FE3E5D2668C8FE00B0467D /* snare.mp3 */,
 				028792B4265ED27C00F0F4EB /* 13.mp3 */,
 				0289300F2659A5150014032E /* Songwriter Bot.entitlements */,
 				028930092659A5090014032E /* Info.plist */,
@@ -219,13 +228,16 @@
 				028792B6265ED27C00F0F4EB /* 3.mp3 in Resources */,
 				028792B5265ED27C00F0F4EB /* 11.mp3 in Resources */,
 				028792B9265ED27D00F0F4EB /* 9.mp3 in Resources */,
+				02FE3E602668C8FE00B0467D /* snare.mp3 in Resources */,
 				028930082659A5090014032E /* LaunchScreen.storyboard in Resources */,
 				028792BA265ED27D00F0F4EB /* 10.mp3 in Resources */,
 				028930052659A5090014032E /* Assets.xcassets in Resources */,
 				028930032659A4FD0014032E /* Main.storyboard in Resources */,
 				028792BE265ED27D00F0F4EB /* 4.mp3 in Resources */,
+				02FE3E5F2668C8FE00B0467D /* hi-hat.mp3 in Resources */,
 				028792BF265ED27D00F0F4EB /* 7.mp3 in Resources */,
 				028792A6265EBAC300F0F4EB /* samples.logicx in Resources */,
+				02FE3E5E2668C8FE00B0467D /* kick.mp3 in Resources */,
 				028792B8265ED27D00F0F4EB /* 12.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

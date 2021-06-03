@@ -59,11 +59,11 @@ class MusicML {
         note1 = generateNote1()
         note2 = generateNote2()
         note3 = generateNote3()
-//        note4 = generateNote4()
-//        note5 = generateNote5()
-//        note6 = generateNote6()
-//        note7 = generateNote7()
-//        note8 = generateNote8()
+        note4 = generateNote4()
+        note5 = generateNote5()
+        note6 = generateNote6()
+        note7 = generateNote7()
+        note8 = generateNote8()
     }
     
     private func doMetal() {
@@ -132,6 +132,194 @@ class MusicML {
             
         } else if note2 == "12" {
             note = ["0", "11", "12"].randomElement()!
+        }
+        
+        return note
+    }
+    
+    private func generateNote4() -> String {
+        var note: String = "error"
+        
+        if note3 == "0" {
+            note = ["1", "2", "3", "5", "7", "8", "12", "13"].randomElement()!
+            
+        } else if note3 == "2" {
+            note = ["3"].randomElement()!
+            
+        } else if note3 == "3" {
+            note = ["0", "2", "5", "7"].randomElement()!
+            
+        } else if note3 == "5" {
+            note = ["3", "7", "8"].randomElement()!
+            
+        } else if note3 == "7" {
+            note = ["0", "3", "5", "8", "12"].randomElement()!
+            
+        } else if note3 == "8" {
+            note = ["0", "7", "11"].randomElement()!
+            
+        } else if note3 == "11" {
+            note = ["0", "8"].randomElement()!
+            
+        } else if note3 == "12" {
+            note = ["0", "11", "12"].randomElement()!
+        } else if note3 == "13" {
+            note = ["0", "12"].randomElement()!
+        }
+        
+        return note
+    }
+    
+    private func generateNote5() -> String {
+        var note: String = "error"
+        
+        if note4 == "0" {
+            note = ["2", "3", "5", "7", "8", "11", "12"].randomElement()!
+            
+        } else if note3 == note4 {
+            note = "0"
+            
+        } else if note4 == "0" && note2 == "11" {
+            note = ["2", "3", "5", "7", "8", "12"].randomElement()!
+            
+        } else if note4 == "1" {
+            note = "0"
+            
+        } else if note4 == "2" {
+            note = ["0", "3", "5"].randomElement()!
+            
+        } else if note4 == "3" {
+            note = ["0", "2", "5", "7", "8"].randomElement()!
+            
+        } else if note4 == "5" {
+            note = ["0","2", "3", "7", "8"].randomElement()!
+            
+        } else if note4 == "7" {
+            note = ["0", "5", "8", "12"].randomElement()!
+            
+        } else if note4 == "8" {
+            note = ["0","5", "7", "11", "12"].randomElement()!
+            
+        } else if note4 == "11" {
+            note = ["0", "8", "12"].randomElement()!
+            
+        } else if note4 == "12" {
+            note = ["0", "11", "12"].randomElement()!
+            
+        } else if note4 == "13" {
+            note = ["0", "12"].randomElement()!
+            
+        }
+        
+        return note
+    }
+    
+    private func generateNote6() -> String {
+        var note: String = "error"
+        
+        if note5 == "0" {
+            note = ["7", "8", "11", "12", "13"].randomElement()!
+            
+        } else if note4 == "11" {
+            note = "0"
+            
+        } else if note5 == "2" {
+            note = ["0", "3", "5"].randomElement()!
+            
+        } else if note5 == "3" {
+            note = ["0", "2", "5", "7", "8"].randomElement()!
+            
+        } else if note5 == "5" {
+            note = ["0","2", "3", "7", "8"].randomElement()!
+            
+        } else if note5 == "7" {
+            note = ["0", "5", "8", "12"].randomElement()!
+            
+        } else if note5 == "8" {
+            note = ["0","5", "7", "11", "12"].randomElement()!
+            
+        } else if note5 == "11" {
+            note = ["0", "8", "12"].randomElement()!
+            
+        } else if note4 == "12" && note5 == "12" {
+            note = "0"
+            
+        } else if note5 == "12" {
+            note = ["0", "11", "12"].randomElement()!
+            
+        }
+        
+        return note
+    }
+    
+    private func generateNote7() -> String {
+        var note: String = "error"
+        
+        if note6 == "0" {
+            note = ["0", "7", "8",].randomElement()!
+            
+        } else if note6 == "2" {
+            note = ["0", "3", "5"].randomElement()!
+            
+        } else if note6 == "3" {
+            note = ["0", "2", "5", "7"].randomElement()!
+            
+        } else if note6 == "5" {
+            note = ["0","2", "3", "7"].randomElement()!
+            
+        } else if note6 == "7" {
+            note = ["5", "8", "12"].randomElement()!
+            
+        } else if note6 == "8" {
+            note = ["0","5", "7", "11", "12"].randomElement()!
+            
+        } else if note6 == "11" {
+            note = ["0", "8", "12"].randomElement()!
+            
+        } else if note6 == "12" {
+            note = ["0", "11", "12"].randomElement()!
+            
+        } else if note6 == "13" {
+            note = ["0", "12"].randomElement()!
+            
+        }
+        
+        return note
+    }
+    
+    private func generateNote8() -> String {
+        var note: String = "error"
+        
+        if note7 == "0" {
+            note = ["0", "7", "8", "12"].randomElement()!
+            
+        } else if note6 == note7 {
+            note = "0"
+            
+        } else if note7 == "2" {
+            note = ["0", "3", "5"].randomElement()!
+            
+        } else if note7 == "3" {
+            note = ["0", "2", "5", "7"].randomElement()!
+            
+        } else if note7 == "5" {
+            note = ["0","2", "3", "7"].randomElement()!
+            
+        } else if note7 == "7" {
+            note = ["5", "8", "12"].randomElement()!
+            
+        } else if note7 == "8" {
+            note = ["0","5", "7", "11", "12"].randomElement()!
+            
+        } else if note7 == "11" {
+            note = ["0", "8", "12"].randomElement()!
+            
+        } else if note7 == "12" && (note1 == "0" || note1 == "12") {
+            note = "11"
+            
+        } else if note7 == "12" {
+            note = ["0", "12"].randomElement()!
+            
         }
         
         return note

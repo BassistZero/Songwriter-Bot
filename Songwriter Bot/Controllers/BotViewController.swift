@@ -22,16 +22,24 @@ class BotViewController: UIViewController {
         tabDebugLabel.text = bot.getTab()
         
         // play the guitar
-        bot.parseGuitar()
-    }
-    
-    @IBAction func stopButton(_ sender: UIButton) {
-        bot.stopAndPlaySound()
+        bot.playMusic()
         
         if bot.getCounter() == 0 {
             stopPlayLabel.setTitle("Stop", for: .normal)
         } else {
             stopPlayLabel.setTitle("Play", for: .normal)
+        }
+    }
+    
+    @IBAction func stopButton(_ sender: UIButton) {
+        bot.stopAndPlaySound()
+        
+        if tabDebugLabel.text != "Click 'Generate' to Start" {
+            if bot.getCounter() == 0 {
+                stopPlayLabel.setTitle("Stop", for: .normal)
+            } else {
+                stopPlayLabel.setTitle("Play", for: .normal)
+            }
         }
     }
 }

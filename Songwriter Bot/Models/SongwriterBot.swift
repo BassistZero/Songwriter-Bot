@@ -15,8 +15,11 @@ class SongwriterBot {
     private var ml = MusicML(tempo: 120)
     private var tempo: Int
     private var notes: [String]
-    private var audioPlayerEven: AVAudioPlayer!
-    private var audioPlayerOdd: AVAudioPlayer!
+    private var guitarAudioPlayerEven: AVAudioPlayer!
+    private var guitarAudioPlayerOdd: AVAudioPlayer!
+    private var drumKickAudioPlayer: AVAudioPlayer!
+    private var drumHiHatAudioPlayer: AVAudioPlayer!
+    private var drumSnareAudioPlayer: AVAudioPlayer!
     private var timer: Timer!
     @objc private let seconds = 0.2
     private var note = 0
@@ -31,7 +34,9 @@ class SongwriterBot {
     public func generateEightNoteRiff() {
         stopSound()
 //        notes = ml.generateAlternativeNotes()
-        notes = ml.generateMetalNotes()
+        notes = ml.generateAlternativeNotes()
+        
+        counter = 0
     }
     
     /// Return formatted tab text.
@@ -39,23 +44,9 @@ class SongwriterBot {
         return "E: \(notes[0])-\(notes[1])-\(notes[2])-\(notes[3])-\(notes[4])-\(notes[5])-\(notes[6])-\(notes[7])"
     }
     
-    /// Play guitar sound in loop.
-    public func parseGuitar() {
-        timer = Timer.scheduledTimer(
-            withTimeInterval: seconds,
-            repeats: true,
-            block: { _ in
-            if self.note % 2 == 0 {
-                self.playSoundOdd(String(self.notes[self.note]))
-            } else {
-                self.playSoundEven(String(self.notes[self.note]))
-            }
-            
-            self.note += 1
-            if self.note == 8 {
-                self.note = 0
-            }
-        })
+    /// Play Music in loop.
+    public func playMusic() {
+        timer = setTimer()
     }
     
     public func getCounter() -> Int {
@@ -66,8 +57,11 @@ class SongwriterBot {
         if counter == 0 {
             counter = 1
             
-            audioPlayerOdd = nil
-            audioPlayerEven = nil
+            guitarAudioPlayerOdd = nil
+            guitarAudioPlayerEven = nil
+            drumHiHatAudioPlayer = nil
+            drumSnareAudioPlayer = nil
+            drumKickAudioPlayer = nil
             
             timer.invalidate()
             timer = nil
@@ -80,21 +74,46 @@ class SongwriterBot {
             }
             timer = nil
             
-            timer = Timer.scheduledTimer(
-                withTimeInterval: seconds,
-                repeats: true,
-                block: { _ in
-                if self.note % 2 == 0 {
-                    self.playSoundOdd(String(self.notes[self.note]))
-                } else {
-                    self.playSoundEven(String(self.notes[self.note]))
-                }
-                
-                self.note += 1
-                if self.note == 8 {
-                    self.note = 0
-                }
-            })
+            timer = setTimer()
+        }
+    }
+    
+    private func playDrumKickSound() {
+        if let path = Bundle.main.path(forResource: "kick", ofType: "mp3") {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                drumKickAudioPlayer = try AVAudioPlayer(contentsOf: url)
+                drumKickAudioPlayer.play()
+            } catch {
+                print("Here's a small error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func playDrumSnareSound() {
+        if let path = Bundle.main.path(forResource: "snare", ofType: "mp3") {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                drumSnareAudioPlayer = try AVAudioPlayer(contentsOf: url)
+                drumSnareAudioPlayer.play()
+            } catch {
+                print("Here's a small error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func playDrumHiHatSound() {
+        if let path = Bundle.main.path(forResource: "hi-hat", ofType: "mp3") {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                drumHiHatAudioPlayer = try AVAudioPlayer(contentsOf: url)
+                drumHiHatAudioPlayer.play()
+            } catch {
+                print("Here's a small error: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -103,11 +122,11 @@ class SongwriterBot {
             let url = URL(fileURLWithPath: path)
             
             do {
-                audioPlayerEven = try AVAudioPlayer(contentsOf: url)
-                audioPlayerEven.play()
+                guitarAudioPlayerEven = try AVAudioPlayer(contentsOf: url)
+                guitarAudioPlayerEven.play()
                 
-                if audioPlayerOdd != nil {
-                    audioPlayerOdd.stop()
+                if guitarAudioPlayerOdd != nil {
+                    guitarAudioPlayerOdd.stop()
                 }
             } catch {
                 print("Here's a small error: \(error.localizedDescription)")
@@ -120,11 +139,11 @@ class SongwriterBot {
             let url = URL(fileURLWithPath: path)
             
             do {
-                audioPlayerOdd = try AVAudioPlayer(contentsOf: url)
-                audioPlayerOdd.play()
+                guitarAudioPlayerOdd = try AVAudioPlayer(contentsOf: url)
+                guitarAudioPlayerOdd.play()
                 
-                if audioPlayerEven != nil {
-                    audioPlayerEven.stop()
+                if guitarAudioPlayerEven != nil {
+                    guitarAudioPlayerEven.stop()
                 }
             } catch {
                 print("Here's a small error: \(error.localizedDescription)")
@@ -132,9 +151,51 @@ class SongwriterBot {
         }
     }
     
+    private func setTimer() -> Timer {
+        return Timer.scheduledTimer(
+            withTimeInterval: seconds,
+            repeats: true,
+            block: { _ in
+                
+                // Guitar notes playing
+                if self.note % 2 == 0 {
+                    self.playSoundOdd(String(self.notes[self.note]))
+                } else {
+                    self.playSoundEven(String(self.notes[self.note]))
+                }
+                    
+                // Drums hard-coded playing
+                if self.note == 0 {
+                    self.playDrumKickSound()
+                    self.playDrumHiHatSound()
+                } else if self.note == 1 {
+                    
+                } else if self.note == 2 {
+                    self.playDrumHiHatSound()
+                    self.playDrumSnareSound()
+                }  else if self.note == 3 {
+                    
+                } else if self.note == 4 {
+                    self.playDrumHiHatSound()
+                } else if self.note == 5 {
+                    self.playDrumKickSound()
+                } else if self.note == 6 {
+                    self.playDrumHiHatSound()
+                    self.playDrumSnareSound()
+                } else if self.note == 7 {
+                    
+                }
+                
+                self.note += 1
+                if self.note == 8 {
+                    self.note = 0
+                }
+        })
+    }
+    
     private func stopSound() {
-        audioPlayerOdd = nil
-        audioPlayerEven = nil
+        guitarAudioPlayerOdd = nil
+        guitarAudioPlayerEven = nil
         
         if timer != nil {
             timer.invalidate()
