@@ -5,9 +5,6 @@
 //  Created by Bassist Zero on 5/23/21.
 //
 
-
-//TODO: Make the kick louder
-
 import Foundation
 import AVFoundation
 
