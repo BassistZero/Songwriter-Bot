@@ -31,12 +31,18 @@ class SongwriterBot {
     public func generateEightNoteRiff() {
         stopSound()
         notes = ml.generateAlternativeNotes()
+//        notes = ml.generateMetalNotes()
         counter = 0
     }
     
-    /// Return formatted tab text.
+//    /// Return formatted alternative tab text.
+//    public func getTab() -> String {
+//        return "E: \(notes[0])-\(notes[1])-\(notes[2])-\(notes[3])-\(notes[4])-\(notes[5])-\(notes[6])-\(notes[7])"
+//    }
+    
+    /// Return formatted metal tab text.
     public func getTab() -> String {
-        return "E: \(notes[0])-\(notes[1])-\(notes[2])-\(notes[3])-\(notes[4])-\(notes[5])-\(notes[6])-\(notes[7])"
+        return "E: \(notes[0])-\(notes[1])-\(notes[2])-\(notes[3])-\(notes[4])-\(notes[5])-\(notes[6])-\(notes[7])-\(notes[8])-\(notes[9])-\(notes[10])-\(notes[11])-\(notes[12])-\(notes[13])-\(notes[14])-\(notes[15])"
     }
     
     /// Play Music in loop.
@@ -160,29 +166,42 @@ class SongwriterBot {
                 }
                     
                 // Drums hard-coded playing
-                if self.note == 0 {
+                if self.note == 0 || self.note == 8 {
                     self.playDrumKickSound()
                     self.playDrumHiHatSound()
-                } else if self.note == 1 {
                     
-                } else if self.note == 2 {
+                } else if self.note == 1 || self.note == 9 {
+                    
+                } else if self.note == 2 || self.note == 10 {
                     self.playDrumHiHatSound()
                     self.playDrumSnareSound()
-                }  else if self.note == 3 {
+                    
+                }  else if self.note == 3 || self.note == 11 {
                     
                 } else if self.note == 4 {
                     self.playDrumHiHatSound()
-                } else if self.note == 5 {
+                    
+                } else if self.note == 12 {
+                    self.playDrumHiHatSound()
                     self.playDrumKickSound()
-                } else if self.note == 6 {
+                    
+                } else if self.note == 5 || self.note == 13 {
+                    self.playDrumKickSound()
+                    
+                } else if self.note == 6 || self.note == 14 {
                     self.playDrumHiHatSound()
                     self.playDrumSnareSound()
+                    
                 } else if self.note == 7 {
+                    
+                } else if self.note == 15 {
+                    self.playDrumSnareSound()
                     
                 }
                 
+                
                 self.note += 1
-                if self.note == 8 {
+                if self.note == 16 {
                     self.note = 0
                 }
         })
